@@ -5,8 +5,7 @@
  */
 package com.criticalgnome.audio;
 
-import com.criticalgnome.audio.classes.Collection;
-import com.criticalgnome.audio.classes.Track;
+import com.criticalgnome.audio.classes.*;
 
 public class AudioRecordRunner {
 
@@ -53,7 +52,7 @@ public class AudioRecordRunner {
 		// TODO Коллекция collection1 содержит список треков. Записываем ее на
 		// диск
 	}
-
+	
 	/**
 	 * Переводит секунды в минуты и секунды
 	 *
@@ -65,4 +64,5 @@ public class AudioRecordRunner {
 		String str = (durationInSec / 60) + " мин. " + (durationInSec % 60) + " сек.";
 		return str;
 	}
+
 }
