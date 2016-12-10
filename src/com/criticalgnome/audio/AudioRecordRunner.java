@@ -64,4 +64,5 @@ public class AudioRecordRunner {
 		String str = (durationInSec / 60) + " мин. " + (durationInSec % 60) + " сек.";
 		return str;
 	}
+	
 }
