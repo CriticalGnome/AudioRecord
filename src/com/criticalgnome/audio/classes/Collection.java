@@ -14,11 +14,6 @@ public class Collection {
 	private String name; // Название коллекции
 	private int duration; // Длительность (в секундах)
 
-	@Override
-	public String toString() {
-		return "Collection [name=" + name + ", duration=" + duration + "]";
-	}
-
 	/**
 	 * Создание коллекции.
 	 *
@@ -29,6 +24,11 @@ public class Collection {
 		super();
 		this.name = name;
 		this.duration = duration;
+	}
+
+	@Override
+	public String toString() {
+		return "Collection [name=" + name + ", duration=" + duration + "]";
 	}
 
 	@Override
