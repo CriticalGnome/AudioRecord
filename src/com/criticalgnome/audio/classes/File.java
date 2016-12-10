@@ -5,6 +5,6 @@
  */
 package com.criticalgnome.audio.classes;
 
-public abstract class Files {
+public abstract class File {
 	
 }
