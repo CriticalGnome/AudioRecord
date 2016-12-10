@@ -8,7 +8,7 @@ package com.criticalgnome.audio.classes;
 /**
  * Класс описывает музыкальный трек.
  */
-public class Track extends File {
+public class Track extends Files {
 
 	private String name; // Название композиции
 	private int duration; // Длительность (в секундах)
