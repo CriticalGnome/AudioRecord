@@ -9,6 +9,5 @@ public class AudioRecordTest {
 		
 		File f = new Track("Name", 100, "POP", "Author");
 		System.out.println(f);
-		
 	}
 }
