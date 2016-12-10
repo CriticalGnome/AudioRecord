@@ -24,7 +24,7 @@ public class AudioRecordRunner {
 		tracks[1] = new Track("Nothing else matters", 385, "Heavy Metal", "Metallica");
 
 		Collection collection1 = new Collection("My Collection", 0);
-		// FIXME Реализовать добавление треков в коллекцию!
+		// FIXME Реализовать добавление треков в коллекцию
 
 		// Вывод первичного списка
 		System.out.println("Музыкальная коллекция \"" + collection1.getName() + "\".");
