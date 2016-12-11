@@ -58,6 +58,7 @@ public class AudioRecordRunner {
 		files[24] = new Track("WE FOUND LOVE", 205, "Electro House", "Rihanna Featuring Calvin Harris");
 
 		while (true) {
+			// Главное меню
 			System.out.println("==================================================================");
 			System.out.println("1. Добавить файл в коллекцию");
 			System.out.println("2. Удалить файл из коллекции");
@@ -69,14 +70,14 @@ public class AudioRecordRunner {
 
 			switch (Keyboard.inputNumber()) {
 			case 1:
-				// TODO Добавление файла в коллекцию
+				// Добавление файла в коллекцию
 				number = -1;
 				while (number != 0) {
 					System.out.println("==================================================================");
 					System.out.println("Список файлов на жёстком диске");
 					System.out.println("------------------------------------------------------------------");
 					
-					// Вывод списка треков в коллекции
+					// Вывод списка файлов на диске
 					for (int i = 0; i < files.length; i++) {
 						if (i < 9) {
 							System.out.print("0");
