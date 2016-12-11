@@ -6,6 +6,7 @@
 package com.criticalgnome.audio;
 
 import com.criticalgnome.audio.classes.*;
+import com.criticalgnome.audio.utils.*;
 
 public class AudioRecordRunner {
 
@@ -13,10 +14,10 @@ public class AudioRecordRunner {
 	 * Главный метод. Точка входа.
 	 *
 	 * @param args
-	 *            аргументы
+	 *            Аргументы командной строки
 	 */
 	public static void main(String[] args) {
-		
+
 		Track[] tracks = new Track[2];
 
 		tracks[0] = new Track("Californication", 322, "Rock", "RHCP");
@@ -37,12 +38,12 @@ public class AudioRecordRunner {
 			System.out.print(tracks[i].getAuthor() + " - ");
 			System.out.print(tracks[i].getName() + " [");
 			System.out.print(tracks[i].getStyle() + "] (");
-			System.out.println(toMinAndSec(tracks[i].getDuration()) + ")");
+			System.out.println(Convert.toMinAndSec(tracks[i].getDuration()) + ")");
 			collectionDuration += tracks[i].getDuration();
 		}
 		collection1.setDuration(collectionDuration);
 		System.out.println("------------------------------------------------------------------");
-		System.out.println("Суммарная длительность коллекции: " + toMinAndSec(collectionDuration));
+		System.out.println("Суммарная длительность коллекции: " + Convert.toMinAndSec(collectionDuration));
 
 		// TODO Здесь будет сортировка
 
@@ -52,17 +53,5 @@ public class AudioRecordRunner {
 		// TODO Коллекция collection1 содержит список треков. Записываем ее на
 		// диск
 	}
-	
-	/**
-	 * Переводит секунды в минуты и секунды
-	 *
-	 * @param durationInSec
-	 *            время в секундах
-	 * @return string : "n мин. n сек."
-	 */
-	static String toMinAndSec(int durationInSec) {
-		String str = (durationInSec / 60) + " мин. " + (durationInSec % 60) + " сек.";
-		return str;
-	}
-	
+
 }
