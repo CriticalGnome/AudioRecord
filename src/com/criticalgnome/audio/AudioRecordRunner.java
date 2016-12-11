@@ -108,7 +108,6 @@ public class AudioRecordRunner {
 				System.out.println("------------------------------------------------------------------");
 				System.out.println("Работа завершена...");
 				System.exit(0);
-
 			default:
 				System.out.println("------------------------------------------------------------------");
 				System.out.println("Неверный ввод. Попробуйте еще раз");
