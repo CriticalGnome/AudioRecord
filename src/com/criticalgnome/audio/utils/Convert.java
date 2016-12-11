@@ -23,7 +23,6 @@ public class Convert {
 	 * @return string : "n мин. n сек."
 	 */
 	public static String toMinAndSec(int durationInSec) {
-		String str = (durationInSec / 60) + " мин. " + (durationInSec % 60) + " сек.";
-		return str;
+		return (durationInSec / 60) + " мин. " + (durationInSec % 60) + " сек.";
 	}
 }
