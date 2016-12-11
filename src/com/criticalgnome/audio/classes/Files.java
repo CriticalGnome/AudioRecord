@@ -6,5 +6,5 @@
 package com.criticalgnome.audio.classes;
 
 public abstract class Files {
-	double size;
+	
 }
