@@ -5,6 +5,8 @@
  */
 package com.criticalgnome.audio;
 
+import java.awt.Toolkit;
+
 import com.criticalgnome.audio.classes.*;
 import com.criticalgnome.audio.utils.*;
 
@@ -18,6 +20,8 @@ public class AudioRecordRunner {
 	 */
 	public static void main(String[] args) {
 
+		String notRealized = "Пока не реализовано.";
+		
 		Collection collection = new Collection("My Collection", 0);
 		Track[] tracks = new Track[25];
 
@@ -39,6 +43,7 @@ public class AudioRecordRunner {
 			switch (Keyboard.inputNumber()) {
 			case 1:
 				// TODO Тут будет добавление файла в коллекцию
+				System.out.println(notRealized);
 				break;
 			case 2:
 				// Удаление файла из коллекции
@@ -96,12 +101,15 @@ public class AudioRecordRunner {
 				break;
 			case 3:
 				// TODO Тут будет сортировка коллекции
+				System.out.println(notRealized);
 				break;
 			case 4:
 				// TODO Тут будет вывод выборки по критерию длительности
+				System.out.println(notRealized);
 				break;
 			case 5:
 				// TODO Тут будет запись на диск
+				System.out.println(notRealized);
 				break;
 			case 0:
 				// Выход
@@ -111,6 +119,7 @@ public class AudioRecordRunner {
 			default:
 				System.out.println("------------------------------------------------------------------");
 				System.out.println("Неверный ввод. Попробуйте еще раз");
+				Toolkit.getDefaultToolkit().beep();
 			}
 		}
 	}
