@@ -16,7 +16,7 @@ public class Collection {
 	public static Collection collection = new Collection("My Collection", 0);
 
 	/**
-	 * Создание коллекции.
+	 * Collection constructor.
 	 *
 	 * @param name String:Collection name
 	 * @param duration int:Duration (in seconds)
