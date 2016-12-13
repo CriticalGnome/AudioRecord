@@ -13,11 +13,11 @@ import com.criticalgnome.audio.utils.*;
 public class AudioRecordRunner {
 
 	private static final int EXIT = 0;
-	private static final int RECORD_DISK = 5;
-	private static final int TAKE_BY_DURATION = 4;
-	private static final int SORT_COLLECTION = 3;
-	private static final int DEL_TRACK = 2;
 	private static final int ADD_TRACK = 1;
+	private static final int DEL_TRACK = 2;
+	private static final int SORT_COLLECTION = 3;
+	private static final int TAKE_BY_DURATION = 4;
+	private static final int RECORD_DISK = 5;
 	private static final int DISK_DURATION = 4800;
 
 	/**
@@ -77,7 +77,7 @@ public class AudioRecordRunner {
 
 			switch (Keyboard.inputNumber()) {
 			case ADD_TRACK:
-				// TODO Добавление файла в коллекцию
+				// Добавление файла в коллекцию
 				number = -1;
 				while (number != EXIT) {
 					System.out.println("==================================================================");
@@ -138,7 +138,7 @@ public class AudioRecordRunner {
 					System.out.println("------------------------------------------------------------------");
 					int collectionDuration = 0;
 					int collectionTracks = 0;
-					// Вывод списка треков в коллекции
+					// Вывод списка треков в каталоге
 					for (int i = 0; i < tracks.length; i++) {
 						if (tracks[i] == null) {
 							break;
