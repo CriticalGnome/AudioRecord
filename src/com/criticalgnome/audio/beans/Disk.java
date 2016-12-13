@@ -12,6 +12,7 @@ import com.criticalgnome.audio.interfaceses.Writable;
  */
 public abstract class Disk implements Readable, Writable {
 	void Read() {
+	
 	}
 	void Write() {
 		
