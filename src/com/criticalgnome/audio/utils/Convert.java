@@ -3,24 +3,24 @@ package com.criticalgnome.audio.utils;
 public class Convert {
 
 	/**
-	 * Конвертер
+	 * Converter
 	 * 
 	 * @param min
-	 *            Минуты
+	 *            Minutes
 	 * @param sec
-	 *            Секунды
-	 * @return Минуты*60+Секунды
+	 *            Seconds
+	 * @return Minutes * 60 + Seconds
 	 */
 	public static int toSeconds(int min, int sec) {
 		return min * 60 + sec;
 	}
 
 	/**
-	 * Переводит секунды в минуты и секунды
+	 * Converts seconds to minutes and seconds
 	 *
-	 * @param durationInSec
-	 *            время в секундах
-	 * @return string : "n мин. n сек."
+	 * @param int:durationInSec
+	 *            time in seconds 
+	 * @return string : "n min. n sec."
 	 */
 	public static String toMinAndSec(int durationInSec) {
 		String str = (durationInSec / 60) + " мин.";

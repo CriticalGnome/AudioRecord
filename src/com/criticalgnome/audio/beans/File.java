@@ -5,6 +5,9 @@
  */
 package com.criticalgnome.audio.beans;
 
+/**
+ * The Class File.
+ */
 public abstract class File {
-	
+	int size;
 }

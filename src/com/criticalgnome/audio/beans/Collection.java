@@ -11,19 +11,23 @@ package com.criticalgnome.audio.beans;
 public class Collection {
 
 
-	private String name = ""; // Название коллекции
-	private int duration = 0; // Длительность (в секундах)
+	private String name = ""; // Collection name
+	private int duration = 0; // Duration (in seconds)
+	public static Collection collection = new Collection("My Collection", 0);
 
 	/**
 	 * Создание коллекции.
 	 *
-	 * @param name String:Название коллекции
-	 * @param duration int:Длительность (в секундах)
+	 * @param name String:Collection name
+	 * @param duration int:Duration (in seconds)
 	 */
 	public Collection(String name, int duration) {
 		super();
 		this.name = name;
 		this.duration = duration;
+	}
+	public Collection() {
+		
 	}
 
 	@Override
