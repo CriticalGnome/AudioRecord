@@ -18,7 +18,7 @@ public class Convert {
 	/**
 	 * Converts seconds to minutes and seconds
 	 *
-	 * @param int:durationInSec
+	 * @param durationInSec
 	 *            time in seconds 
 	 * @return string : "n min. n sec."
 	 */
