@@ -30,7 +30,6 @@ public class AudioRecordRunner {
 
 		String notRealized = "Пока не реализовано.";
 		String invalidInput = "Неверный ввод. Попробуйте ещё раз.";
-		int collectionFreeSpace = DISK_DURATION;
 		int number;
 
 		Collection collection = new Collection("My Collection", 0);
@@ -97,7 +96,7 @@ public class AudioRecordRunner {
 						System.out.println(Convert.toMinAndSec(files[i].getDuration()) + ")");
 					}
 					System.out.println("------------------------------------------------------------------");
-					System.out.println("Свободное место в коллекции: " + Convert.toMinAndSec(collectionFreeSpace));
+					System.out.println("Свободное место в коллекции: " + Convert.toMinAndSec(DISK_DURATION - collection.getDuration()));
 					System.out.print("Какой трек добавить? (0 - отмена): ");
 					number = Keyboard.inputNumber();
 					if (number == EXIT) {
@@ -108,7 +107,7 @@ public class AudioRecordRunner {
 						Toolkit.getDefaultToolkit().beep();
 						continue;
 					}
-					if ((collectionFreeSpace - files[number-1].getDuration()) < 0) {
+					if (((DISK_DURATION - collection.getDuration()) - files[number-1].getDuration()) < 0) {
 						System.out.println("Недостаточно свободного времени в коллекции.");
 						Toolkit.getDefaultToolkit().beep();
 						continue;
@@ -116,7 +115,7 @@ public class AudioRecordRunner {
 					for (int i = 0; i < tracks.length; i++) {
 						if (tracks[i] == null) {
 							tracks[i] = files[number-1];
-							collectionFreeSpace -= files[number-1].getDuration();
+							collection.setDuration(collection.getDuration() + files[number-1].getDuration());
 							System.out.println("Композиция " + files[number-1].getName() + " успешно добавлена в коллекцию.");
 							break;
 						}
@@ -137,7 +136,7 @@ public class AudioRecordRunner {
 					System.out.println("==================================================================");
 					System.out.println("Музыкальная коллекция \"" + collection.getName() + "\".");
 					System.out.println("------------------------------------------------------------------");
-					int collectionDuration = 0;
+//					collection.setDuration(0);
 					int collectionTracks = 0;
 					// Вывод списка треков в каталоге
 					for (int i = 0; i < tracks.length; i++) {
@@ -152,13 +151,11 @@ public class AudioRecordRunner {
 						System.out.print(tracks[i].getName() + " [");
 						System.out.print(tracks[i].getStyle() + "] (");
 						System.out.println(Convert.toMinAndSec(tracks[i].getDuration()) + ")");
-						collectionDuration += tracks[i].getDuration();
 						collectionTracks++;
 					}
-					collection.setDuration(collectionDuration);
 					System.out.println("------------------------------------------------------------------");
 					System.out.println("Всего треков: " + collectionTracks + ". Суммарная длительность: "
-							+ Convert.toMinAndSec(collectionDuration));
+							+ Convert.toMinAndSec(collection.getDuration()));
 					System.out.print("Какой трек удалить? (0 - отмена): ");
 					number = Keyboard.inputNumber();
 					if (number == EXIT) {
@@ -170,7 +167,7 @@ public class AudioRecordRunner {
 						continue;
 					}
 					if (tracks[number - 1] != null) {
-						collectionFreeSpace += tracks[number - 1].getDuration();
+						collection.setDuration((collection.getDuration() - tracks[number - 1].getDuration()));
 						collectionTracks--;
 						// Сдвигаем массив
 						for (int i = number - 1; i < tracks.length; i++) {

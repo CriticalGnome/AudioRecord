@@ -11,8 +11,8 @@ package com.criticalgnome.audio.beans;
 public class Collection {
 
 
-	private String name; // Название коллекции
-	private int duration; // Длительность (в секундах)
+	private String name = ""; // Название коллекции
+	private int duration = 0; // Длительность (в секундах)
 
 	/**
 	 * Создание коллекции.
