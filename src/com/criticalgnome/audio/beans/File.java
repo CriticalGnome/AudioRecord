@@ -3,8 +3,8 @@
  * @author Sergey Kalinovsky
  * @version 1.0
  */
-package com.criticalgnome.audio.classes;
+package com.criticalgnome.audio.beans;
 
-public abstract class Files {
+public abstract class File {
 	
 }

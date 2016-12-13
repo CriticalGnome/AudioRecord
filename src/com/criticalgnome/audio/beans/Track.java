@@ -3,12 +3,12 @@
  * @author Sergey Kalinovsky
  * @version 1.0
  */
-package com.criticalgnome.audio.classes;
+package com.criticalgnome.audio.beans;
 
 /**
  * Класс описывает музыкальный трек.
  */
-public class Track extends Files {
+public class Track extends File {
 
 	private String name; // Название композиции
 	private int duration; // Длительность (в секундах)

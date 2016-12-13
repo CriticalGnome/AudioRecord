@@ -7,10 +7,18 @@ package com.criticalgnome.audio;
 
 import java.awt.Toolkit;
 
-import com.criticalgnome.audio.classes.*;
+import com.criticalgnome.audio.beans.*;
 import com.criticalgnome.audio.utils.*;
 
 public class AudioRecordRunner {
+
+	private static final int EXIT = 0;
+	private static final int ADD_TRACK = 1;
+	private static final int DEL_TRACK = 2;
+	private static final int SORT_COLLECTION = 3;
+	private static final int TAKE_BY_DURATION = 4;
+	private static final int RECORD_DISK = 5;
+	private static final int DISK_DURATION = 4800;
 
 	/**
 	 * Главный метод. Точка входа.
@@ -22,7 +30,7 @@ public class AudioRecordRunner {
 
 		String notRealized = "Пока не реализовано.";
 		String invalidInput = "Неверный ввод. Попробуйте ещё раз.";
-		int collectionFreeSpace = 4800;
+		int collectionFreeSpace = DISK_DURATION;
 		int number;
 
 		Collection collection = new Collection("My Collection", 0);
@@ -69,10 +77,10 @@ public class AudioRecordRunner {
 			System.out.println("------------------------------------------------------------------");
 
 			switch (Keyboard.inputNumber()) {
-			case 1:
+			case ADD_TRACK:
 				// Добавление файла в коллекцию
 				number = -1;
-				while (number != 0) {
+				while (number != EXIT) {
 					System.out.println("==================================================================");
 					System.out.println("Список файлов на жёстком диске");
 					System.out.println("------------------------------------------------------------------");
@@ -92,7 +100,7 @@ public class AudioRecordRunner {
 					System.out.println("Свободное место в коллекции: " + Convert.toMinAndSec(collectionFreeSpace));
 					System.out.print("Какой трек добавить? (0 - отмена): ");
 					number = Keyboard.inputNumber();
-					if (number == 0) {
+					if (number == EXIT) {
 						break;
 					}
 					if (number < 1 || number -1 > files.length) {
@@ -116,10 +124,10 @@ public class AudioRecordRunner {
 				}
 
 				break;
-			case 2:
+			case DEL_TRACK:
 				// Удаление файла из коллекции
 				number = -1;
-				while (number != 0) {
+				while (number != EXIT) {
 					if (tracks[0] == null) {
 						System.out.println("------------------------------------------------------------------");
 						System.out.println("Коллекция пуста!");
@@ -131,7 +139,7 @@ public class AudioRecordRunner {
 					System.out.println("------------------------------------------------------------------");
 					int collectionDuration = 0;
 					int collectionTracks = 0;
-					// Вывод списка треков в коллекции
+					// Вывод списка треков в каталоге
 					for (int i = 0; i < tracks.length; i++) {
 						if (tracks[i] == null) {
 							break;
@@ -153,7 +161,7 @@ public class AudioRecordRunner {
 							+ Convert.toMinAndSec(collectionDuration));
 					System.out.print("Какой трек удалить? (0 - отмена): ");
 					number = Keyboard.inputNumber();
-					if (number == 0) {
+					if (number == EXIT) {
 						break;
 					}
 					if (number < 1 || number -1 > tracks.length) {
@@ -182,19 +190,19 @@ public class AudioRecordRunner {
 				}
 				;
 				break;
-			case 3:
+			case SORT_COLLECTION:
 				// TODO Тут будет сортировка коллекции
 				System.out.println(notRealized);
 				break;
-			case 4:
+			case TAKE_BY_DURATION:
 				// TODO Тут будет вывод выборки по критерию длительности
 				System.out.println(notRealized);
 				break;
-			case 5:
+			case RECORD_DISK:
 				// TODO Тут будет запись на диск
 				System.out.println(notRealized);
 				break;
-			case 0:
+			case EXIT:
 				// Выход
 				System.out.println("------------------------------------------------------------------");
 				System.out.println("Работа завершена...");
