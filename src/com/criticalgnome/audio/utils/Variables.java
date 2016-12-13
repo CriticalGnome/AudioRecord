@@ -17,6 +17,8 @@ public class Variables {
 	/** Under construction string */
 	public static final String NOT_REALISED = "Пока не реализовано.";
 	/** Default duration of CD-Disk (in seconds) */
+	public static final String THIN_LINE = "------------------------------------------------------------------";
+	public static final String THICK_LINE = "\n==================================================================";
 	public static final int DISK_DURATION = 4800; //80 min
 	public static final int EXIT = 0;
 	public static final int ADD_TRACK = 1;
@@ -56,5 +58,6 @@ public class Variables {
 		Track.files.add(new Track("EYE OF THE TIGER", 246, "Rock", "Survivor"));
 		Track.files.add(new Track("WE FOUND LOVE", 205, "Electro House", "Rihanna Featuring Calvin Harris"));
 	}
+
 
 }

@@ -18,9 +18,9 @@ public class MenuItems {
 	public static void addTrack() {
 		int number = -1;
 		while (number != Variables.EXIT) {
-			System.out.println("==================================================================");
+			System.out.println(Variables.THICK_LINE);
 			System.out.println("Список файлов на жёстком диске");
-			System.out.println("------------------------------------------------------------------");
+			System.out.println(Variables.THIN_LINE);
 
 			// Print list of available files
 			for (int i = 0; i < Track.files.size(); i++) {
@@ -33,7 +33,7 @@ public class MenuItems {
 				System.out.print(Track.files.get(i).getStyle() + "] (");
 				System.out.println(Convert.toMinAndSec(Track.files.get(i).getDuration()) + ")");
 			}
-			System.out.println("------------------------------------------------------------------");
+			System.out.println(Variables.THIN_LINE);
 			System.out.println("Свободное место в коллекции: " + Convert
 					.toMinAndSec(Variables.DISK_DURATION - Collection.collection.getDuration()));
 			System.out.print("Какой трек добавить? (0 - отмена): ");
@@ -41,7 +41,7 @@ public class MenuItems {
 			if (number == Variables.EXIT) {
 				break;
 			}
-			if (number < 1 || number - 1 > Track.files.size()) {
+			if (number < 1 || number - 1 >= Track.files.size()) {
 				System.out.println(Variables.INVALID_INPUT);
 				Toolkit.getDefaultToolkit().beep();
 				continue;
@@ -67,14 +67,14 @@ public class MenuItems {
 		int number = -1;
 		while (number != Variables.EXIT) {
 			if (Track.tracks.size() == 0) {
-				System.out.println("------------------------------------------------------------------");
+				System.out.println(Variables.THIN_LINE);
 				System.out.println("Коллекция пуста!");
 				Toolkit.getDefaultToolkit().beep();
 				break;
 			}
-			System.out.println("==================================================================");
+			System.out.println(Variables.THICK_LINE);
 			System.out.println("Музыкальная коллекция \"" + Collection.collection.getName() + "\".");
-			System.out.println("------------------------------------------------------------------");
+			System.out.println(Variables.THIN_LINE);
 			// Print tracks in collection
 			for (int i = 0; i < Track.tracks.size(); i++) {
 				if (i < 9) {
@@ -86,7 +86,7 @@ public class MenuItems {
 				System.out.print(Track.tracks.get(i).getStyle() + "] (");
 				System.out.println(Convert.toMinAndSec(Track.tracks.get(i).getDuration()) + ")");
 			}
-			System.out.println("------------------------------------------------------------------");
+			System.out.println(Variables.THIN_LINE);
 			System.out.println("Всего треков: " + Track.tracks.size() + ". Суммарная длительность: "
 					+ Convert.toMinAndSec(Collection.collection.getDuration()));
 			System.out.print("Какой трек удалить? (0 - отмена): ");
@@ -94,14 +94,14 @@ public class MenuItems {
 			if (number == Variables.EXIT) {
 				break;
 			}
-			if (number < 1 || number - 1 > Track.tracks.size()) {
+			if (number < 1 || number - 1 >= Track.tracks.size()) {
 				System.out.println(Variables.INVALID_INPUT);
 				Toolkit.getDefaultToolkit().beep();
 				continue;
 			}
 			Collection.collection.setDuration((Collection.collection.getDuration() - Track.tracks.get(number - 1).getDuration()));
+			System.out.println("Композиция " + Track.tracks.get(number - 1).getName() + " удалена из коллекции.");
 			Track.tracks.remove(number - 1);
-				System.out.println("Удаляем трек номер " + number);
 		}
 
 	}
