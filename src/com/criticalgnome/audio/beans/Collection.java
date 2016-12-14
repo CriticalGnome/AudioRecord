@@ -11,8 +11,8 @@ package com.criticalgnome.audio.beans;
 public class Collection {
 
 
-	private String name = ""; // Collection name
-	private int duration = 0; // Duration (in seconds)
+	private String name; // Collection name
+	private int duration; // Duration (in seconds)
 	public static Collection collection = new Collection("My Collection", 0);
 
 	/**
