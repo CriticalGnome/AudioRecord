@@ -10,8 +10,29 @@ import java.awt.Toolkit;
 import com.criticalgnome.audio.beans.Collection;
 import com.criticalgnome.audio.beans.Track;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MenuItems.
+ */
 public class MenuItems {
 	
+	/**
+	 * Main menu.
+	 */
+	public static void mainMenu() {
+		System.out.println(Variables.THICK_LINE);
+		System.out.println("\tAudio Recorder");
+		System.out.println(Variables.THIN_LINE);
+		System.out.println("1. Добавить трек в коллекцию");
+		System.out.println("2. Удалить трек из коллекции");
+		System.out.println("3. Отсортировать коллекцию");
+		System.out.println("4. Вывести список треков с заданной длительностью");
+		System.out.println("5. Записать коллекцию на диск");
+		System.out.println("0. Выход");
+		System.out.println(Variables.THIN_LINE);
+		System.out.print("Введите команду: ");
+
+	}
 	/**
 	 * Adds the track to collection.
 	 */
@@ -67,7 +88,6 @@ public class MenuItems {
 		int number = -1;
 		while (number != Variables.EXIT) {
 			if (Track.tracks.size() == 0) {
-				System.out.println(Variables.THIN_LINE);
 				System.out.println("Коллекция пуста!");
 				Toolkit.getDefaultToolkit().beep();
 				break;
@@ -104,5 +124,26 @@ public class MenuItems {
 			Track.tracks.remove(number - 1);
 		}
 
+	}
+	
+	/**
+	 * Sort collection by style.
+	 */
+	public static void sortByStyle() {
+		System.out.println(Variables.NOT_REALISED);
+	}
+	
+	/**
+	 * Select tracks by duration.
+	 */
+	public static void selectByDuration() {
+		System.out.println(Variables.NOT_REALISED);
+	}
+	
+	/**
+	 * Write collection to disk.
+	 */
+	public static void writeToDisk() {
+		System.out.println(Variables.NOT_REALISED);
 	}
 }
