@@ -7,6 +7,8 @@ package com.criticalgnome.audio;
 
 import java.awt.Toolkit;
 
+//import java.awt.Toolkit;
+
 import com.criticalgnome.audio.utils.*;
 
 public class AudioRecordRunner {
@@ -16,6 +18,7 @@ public class AudioRecordRunner {
 	 *
 	 * @param args
 	 *            Command line arguments
+	 * @throws CommandOutOfRange 
 	 */
 	public static void main(String[] args) {
 
