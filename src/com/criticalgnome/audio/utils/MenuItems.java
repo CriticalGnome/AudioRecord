@@ -27,7 +27,7 @@ public class MenuItems {
 		System.out.println(Variables.THICK_LINE);
 		System.out.println("1. Добавить файл в коллекцию");
 		System.out.println("2. Удалить файл из коллекции");
-		System.out.println("3. Отсортировать коллекцию");
+		System.out.println("3. Отсортировать коллекцию по музыкальному стилю");
 		System.out.println("4. Вывести список файлов с заданной длительностью");
 		System.out.println("5. Записать коллекцию на диск");
 		System.out.println("0. Выход");
@@ -169,8 +169,38 @@ public class MenuItems {
 	 * Sort collection by style.
 	 */
 	public static Collection sortByStyle(Collection myCollection) {
-		//TODO
-		System.out.println(Variables.NOT_REALISED);
+		if (myCollection.getTracks().isEmpty()) {
+			System.out.println("Коллекция пуста!");
+			Toolkit.getDefaultToolkit().beep();
+			return myCollection;
+		}
+		Track tempTrack = new Track();
+		for (int i = myCollection.getTracks().size() - 1; i > 0; i--) {
+			for (int j = 0; j < i; j++) {
+				if (myCollection.getTracks().get(j).getStyle().compareToIgnoreCase(myCollection.getTracks().get(j + 1).getStyle()) > 0) {
+					tempTrack = myCollection.getTracks().get(j);
+					myCollection.getTracks().set(j, myCollection.getTracks().get(j + 1));
+					myCollection.getTracks().set(j + 1, tempTrack);
+				}
+			}
+		}
+		System.out.println(Variables.THICK_LINE);
+		System.out.println("Коллекция \"" + myCollection.getName() + "\" отсортирована по музыкальному стилю.");
+		System.out.println(Variables.THIN_LINE);
+		// Print tracks in collection
+		for (int i = 0; i < myCollection.getTracks().size(); i++) {
+			if (i < 9) {
+				System.out.print("0");
+			}
+			System.out.print((i + 1) + ". ");
+			System.out.print(myCollection.getTracks().get(i).getAuthor() + " - ");
+			System.out.print(myCollection.getTracks().get(i).getName() + " [");
+			System.out.print(myCollection.getTracks().get(i).getStyle() + "] (");
+			System.out.println(Convert.toMinAndSec(myCollection.getTracks().get(i).getDuration()) + ")");
+		}
+		System.out.println(Variables.THIN_LINE);
+		System.out.println("Всего треков: " + myCollection.getTracks().size() + ". Суммарная длительность: "
+				+ Convert.toMinAndSec(myCollection.getDuration()));
 		return myCollection;
 	}
 	
