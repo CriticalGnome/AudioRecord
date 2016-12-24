@@ -29,6 +29,8 @@ public class Keyboard {
 			return number;
 		} catch (InputMismatchException e) {
 			return -1;
+		} finally {
+			
 		}
 		
 	}
