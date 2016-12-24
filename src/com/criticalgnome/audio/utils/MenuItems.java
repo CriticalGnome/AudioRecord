@@ -37,7 +37,6 @@ public class MenuItems {
 	}
 	/**
 	 * Adds the track to collection.
-	 * 
 	 * @param myCollection Current Collection
 	 * @param files Files at current directory
 	 * @return edited Collection
@@ -119,7 +118,6 @@ public class MenuItems {
 
 	/**
 	 * Remove the track from collection.
-	 * 
 	 * @param myCollection Current Collection
 	 * @return edited Collection
 	 */
@@ -167,6 +165,8 @@ public class MenuItems {
 	
 	/**
 	 * Sort collection by style.
+	 * @param myCollection Current Collection
+	 * @return sorted Collection
 	 */
 	public static Collection sortByStyle(Collection myCollection) {
 		if (myCollection.getTracks().isEmpty()) {
@@ -206,6 +206,7 @@ public class MenuItems {
 	
 	/**
 	 * Select tracks by duration.
+	 * @param myCollection Current Collection
 	 */
 	public static void selectByDuration(Collection myCollection) {
 		System.out.println(Variables.THICK_LINE);
