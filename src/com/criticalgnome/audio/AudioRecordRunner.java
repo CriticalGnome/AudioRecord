@@ -6,9 +6,10 @@
 package com.criticalgnome.audio;
 
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.List;
 
-//import java.awt.Toolkit;
-
+import com.criticalgnome.audio.beans.*;
 import com.criticalgnome.audio.utils.*;
 
 public class AudioRecordRunner {
@@ -18,13 +19,13 @@ public class AudioRecordRunner {
 	 *
 	 * @param args
 	 *            Command line arguments
-	 * @throws CommandOutOfRange 
 	 */
 	public static void main(String[] args) {
 
-		// Fill files list by fabricated evidence
-		Variables.fillFilesList();
+		List<Track> tracks = new ArrayList<Track>();
 		
+		Collection myCollection = new Collection("My Collection", 0, tracks);
+
 		while (true) {
 			// Main menu
 			MenuItems.mainMenu();
@@ -32,23 +33,23 @@ public class AudioRecordRunner {
 
 			case Variables.ADD_TRACK:
 				// Add file to collection
-				MenuItems.addTrack();
+				myCollection = MenuItems.addTrack(myCollection);
 				break;
 			case Variables.DEL_TRACK:
 				// Remove file from collection
-				MenuItems.delTrack();
+				myCollection = MenuItems.delTrack(myCollection);
 				break;
 			case Variables.SORT_COLLECTION:
-				MenuItems.sortByStyle();
+				myCollection = MenuItems.sortByStyle(myCollection);
 				break;
 			case Variables.TAKE_BY_DURATION:
-				MenuItems.selectByDuration();
+				myCollection = MenuItems.selectByDuration(myCollection);
 				break;
 			case Variables.RECORD_DISK:
-				MenuItems.writeToDisk();
+				MenuItems.writeToDisk(myCollection);
 				break;
 			case Variables.EXIT:
-				// Выход
+				// Program exit
 				System.out.println("Работа завершена...");
 				System.exit(0);
 			default:

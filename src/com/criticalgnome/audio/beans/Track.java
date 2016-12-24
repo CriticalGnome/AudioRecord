@@ -5,9 +5,6 @@
  */
 package com.criticalgnome.audio.beans;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * This class describes the musical track
  */
@@ -17,17 +14,13 @@ public class Track extends File {
 	private int duration; // Duration (in seconds)
 	private String style; // Style
 	private String author; // Author
-	/** This list contains some files, located at HDD drive */
-	public static List<Track> files = new ArrayList<Track>();
-	/** This list contains some tracks, added to musical collection */
-	public static List<Track> tracks = new ArrayList<Track>();
 	
 	/**
 	 * New track constructor
-	 * @param name String:Track name
-	 * @param duration int:Duration (in seconds)
-	 * @param style the String:Style
-	 * @param author the Author
+	 * @param name Track name
+	 * @param duration Duration (in seconds)
+	 * @param style Track style
+	 * @param author Track author
 	 */
 	public Track(String name, int duration, String style, String author) {
 		super();
