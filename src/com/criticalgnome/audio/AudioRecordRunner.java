@@ -43,7 +43,7 @@ public class AudioRecordRunner {
 				myCollection = MenuItems.sortByStyle(myCollection);
 				break;
 			case Variables.TAKE_BY_DURATION:
-				myCollection = MenuItems.selectByDuration(myCollection);
+				MenuItems.selectByDuration(myCollection);
 				break;
 			case Variables.RECORD_DISK:
 				MenuItems.writeToDisk(myCollection);

@@ -34,4 +34,23 @@ public class Keyboard {
 		}
 		
 	}
+
+	public static int inputRange(String str) {
+		System.out.print(str);
+		String range = input.next();
+		range = range.trim();
+		try {
+			String[] rangeArray = range.split(":");
+			int minutes = Integer.parseInt(rangeArray[0]);
+			int seconds = Integer.parseInt(rangeArray[1]);
+			if (minutes < 0 || minutes > 80 || seconds < 0 || seconds > 59) {
+				System.out.print("Неверный формат! ");
+				return -1;
+			}
+			return minutes * 60 + seconds;  
+		} catch (Exception e) {
+			System.out.print("Неверный формат! ");
+			return -1;
+		}
+	}
 }
