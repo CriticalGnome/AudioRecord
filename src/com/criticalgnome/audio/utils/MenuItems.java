@@ -255,7 +255,7 @@ public class MenuItems {
 	 * Write collection to disk.
 	 */
 	public static void writeToDisk(Collection myCollection) {
-		//TODOA
+		//TODO
 		System.out.println(Variables.NOT_REALISED);
 	}
 }
