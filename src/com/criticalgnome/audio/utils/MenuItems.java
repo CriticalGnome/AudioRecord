@@ -38,7 +38,6 @@ public class MenuItems {
 	/**
 	 * Adds the track to collection.
 	 * @param myCollection Current Collection
-	 * @param files Files at current directory
 	 * @return edited Collection
 	 */
 	public static Collection addTrack(Collection myCollection) {
@@ -254,6 +253,7 @@ public class MenuItems {
 	
 	/**
 	 * Write collection to disk.
+	 * @param myCollection Current Collection
 	 */
 	public static void writeToDisk(Collection myCollection) {
 		//TODO
