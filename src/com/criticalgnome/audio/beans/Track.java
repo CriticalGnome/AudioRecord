@@ -5,11 +5,17 @@
  */
 package com.criticalgnome.audio.beans;
 
+import java.io.Serializable;
+
 /**
  * This class describes the musical track
  */
-public class Track extends File {
+public class Track extends File implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3193721823729996955L;
 	private String name; // Track name
 	private int duration; // Duration (in seconds)
 	private String style; // Style

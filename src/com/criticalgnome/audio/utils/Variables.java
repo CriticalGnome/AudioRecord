@@ -22,7 +22,7 @@ public class Variables {
 	public static final int DISK_DURATION = 4800; // 80 min
 	public static final int EXIT = 0; // Key 0 from keyboard
 	public static final int ADD_TRACK = 1; // Key 1 from keyboard
-	public static final int DEL_TRACK = 2; // Key 2 from keyboard
+	public static final int REMOVE_TRACK = 2; // Key 2 from keyboard
 	public static final int SORT_COLLECTION = 3; // Key 3 from keyboard
 	public static final int TAKE_BY_DURATION = 4; // Key 4 from keyboard
 	public static final int RECORD_DISK = 5; // Key 5 from keyboard

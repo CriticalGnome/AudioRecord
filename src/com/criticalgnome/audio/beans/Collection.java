@@ -5,14 +5,19 @@
  */
 package com.criticalgnome.audio.beans;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * The Class Collection.
  */
-public class Collection {
+public class Collection implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -660440111642085937L;
 	private String name; // Collection name
 	private int duration; // Duration (in seconds)
 	private List<Track> tracks = new ArrayList<Track>();
