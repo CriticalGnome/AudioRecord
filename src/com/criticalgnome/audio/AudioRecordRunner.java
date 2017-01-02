@@ -83,8 +83,9 @@ public class AudioRecordRunner {
 					ObjectOutputStream oos = new ObjectOutputStream(os);
 					oos.writeObject(myCollection);
 					oos.close();
+					System.out.println("Сессия успешно сохранена.");
 				} catch (FileNotFoundException e) {
-					e.printStackTrace();
+					System.out.println("Не удалось сохранить сессию. Скорее всего в текущем каталоге отсутствует папка \"Files\".");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
