@@ -7,6 +7,8 @@ package com.criticalgnome.audio.beans;
 
 import java.io.Serializable;
 
+import com.criticalgnome.audio.utils.Style;
+
 /**
  * This class describes the musical track
  */
@@ -18,7 +20,7 @@ public class Track extends File implements Serializable {
 	private static final long serialVersionUID = 3193721823729996955L;
 	private String name; // Track name
 	private int duration; // Duration (in seconds)
-	private String style; // Style
+	private Style style; // Style
 	private String author; // Author
 	
 	/**
@@ -28,7 +30,7 @@ public class Track extends File implements Serializable {
 	 * @param style Track style
 	 * @param author Track author
 	 */
-	public Track(String name, int duration, String style, String author) {
+	public Track(String name, int duration, Style style, String author) {
 		super();
 		this.name = name;
 		this.duration = duration;
@@ -100,11 +102,11 @@ public class Track extends File implements Serializable {
 		this.duration = duration;
 	}
 
-	public String getStyle() {
+	public Style getStyle() {
 		return style;
 	}
 
-	public void setStyle(String style) {
+	public void setStyle(Style style) {
 		this.style = style;
 	}
 

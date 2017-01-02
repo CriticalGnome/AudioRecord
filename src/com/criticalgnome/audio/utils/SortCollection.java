@@ -28,7 +28,7 @@ public class SortCollection {
 		Track tempTrack = new Track();
 		for (int i = myCollection.getTracks().size() - 1; i > 0; i--) {
 			for (int j = 0; j < i; j++) {
-				if (myCollection.getTracks().get(j).getStyle().compareToIgnoreCase(myCollection.getTracks().get(j + 1).getStyle()) > 0) {
+				if (myCollection.getTracks().get(j).getStyle().compareTo(myCollection.getTracks().get(j + 1).getStyle()) > 0) {
 					tempTrack = myCollection.getTracks().get(j);
 					myCollection.getTracks().set(j, myCollection.getTracks().get(j + 1));
 					myCollection.getTracks().set(j + 1, tempTrack);
