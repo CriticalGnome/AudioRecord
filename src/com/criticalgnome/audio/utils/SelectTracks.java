@@ -6,6 +6,7 @@
 package com.criticalgnome.audio.utils;
 
 import com.criticalgnome.audio.beans.Collection;
+import com.criticalgnome.audio.exceptions.CollectionEmptyEx;
 
 public class SelectTracks {
 
@@ -14,6 +15,14 @@ public class SelectTracks {
 	 * @param myCollection Current Collection
 	 */
 	public static void selectByDuration(Collection myCollection) {
+		if (myCollection.getTracks().isEmpty()) {
+			try {
+				throw new CollectionEmptyEx();
+			} catch(CollectionEmptyEx e) {
+				
+			}
+			return;
+		}
 		System.out.println(Variables.THICK_LINE);
 		System.out.println("Подбор треков, соответствующих заданному временному диапазону");
 		int rangeBegin = -1;

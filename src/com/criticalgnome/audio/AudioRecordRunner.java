@@ -5,13 +5,6 @@
  */
 package com.criticalgnome.audio;
 
-// TODO Реализовать в итоговом проекте модуля custom exceptions и их корректную обработку
-// TODO Реализовать +List+, Set, Map в итоговом проекте
-// TODO Реализовать сериализацию в итоговом проекте (иерархия, static, transient)
-// TODO Реализовать ListIterator в итоговом проекте
-// TODO Реализовать перечисления в итоговом проекте
-// TODO Реализовать параметризацию (generics) в итоговом проекте 
-
 import java.awt.Toolkit;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,6 +18,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import com.criticalgnome.audio.beans.*;
+import com.criticalgnome.audio.exceptions.CollectionEmptyEx;
 import com.criticalgnome.audio.utils.*;
 
 public class AudioRecordRunner {
@@ -34,8 +28,9 @@ public class AudioRecordRunner {
 	 *
 	 * @param args
 	 *            Command line arguments
+	 * @throws CollectionEmptyEx 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CollectionEmptyEx {
 		
 		Calendar calendar = new GregorianCalendar();
 		System.out.print("Добро пожаловать. Сегодня "
@@ -64,16 +59,13 @@ public class AudioRecordRunner {
 
 
 		while (true) {
-			// Main menu
 			MainMenu.mainMenu();
 			switch (Keyboard.inputNumber()) {
 
 			case Variables.ADD_TRACK:
-				// Add file to collection
 				myCollection = AddTrack.addTrack(myCollection);
 				break;
 			case Variables.REMOVE_TRACK:
-				// Remove file from collection
 				myCollection = RemoveTrack.removeTrack(myCollection);
 				break;
 			case Variables.SORT_COLLECTION:
@@ -86,7 +78,6 @@ public class AudioRecordRunner {
 				WriteCollection.writeToDisk(myCollection);
 				break;
 			case Variables.EXIT:
-				// Program exit
 				try {
 					FileOutputStream os = new FileOutputStream("Files/Collection.bin");
 					ObjectOutputStream oos = new ObjectOutputStream(os);

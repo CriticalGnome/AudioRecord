@@ -5,10 +5,9 @@
  */
 package com.criticalgnome.audio.utils;
 
-import java.awt.Toolkit;
-
 import com.criticalgnome.audio.beans.Collection;
 import com.criticalgnome.audio.beans.Track;
+import com.criticalgnome.audio.exceptions.CollectionEmptyEx;
 
 public class SortCollection {
 
@@ -19,8 +18,11 @@ public class SortCollection {
 	 */
 	public static Collection sortByStyle(Collection myCollection) {
 		if (myCollection.getTracks().isEmpty()) {
-			System.out.println("Коллекция пуста!");
-			Toolkit.getDefaultToolkit().beep();
+			try {
+				throw new CollectionEmptyEx();
+			} catch(CollectionEmptyEx e) {
+				
+			}
 			return myCollection;
 		}
 		Track tempTrack = new Track();

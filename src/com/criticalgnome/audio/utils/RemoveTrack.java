@@ -8,6 +8,7 @@ package com.criticalgnome.audio.utils;
 import java.awt.Toolkit;
 
 import com.criticalgnome.audio.beans.Collection;
+import com.criticalgnome.audio.exceptions.CollectionEmptyEx;
 
 public class RemoveTrack {
 
@@ -15,13 +16,17 @@ public class RemoveTrack {
 	 * Remove the track from collection.
 	 * @param myCollection Current Collection
 	 * @return edited Collection
+	 * @throws CollectionEmptyEx 
 	 */
-	public static Collection removeTrack(Collection myCollection) {
+	public static Collection removeTrack(Collection myCollection) throws CollectionEmptyEx {
 		int number = -1;
 		while (number != Variables.EXIT) {
 			if (myCollection.getTracks().isEmpty()) {
-				System.out.println("Коллекция пуста!");
-				Toolkit.getDefaultToolkit().beep();
+				try {
+					throw new CollectionEmptyEx();
+				} catch(CollectionEmptyEx e) {
+					
+				}
 				break;
 			}
 			System.out.println(Variables.THICK_LINE);
