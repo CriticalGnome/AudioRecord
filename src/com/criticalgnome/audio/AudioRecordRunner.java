@@ -28,7 +28,7 @@ public class AudioRecordRunner {
 	 *
 	 * @param args
 	 *            Command line arguments
-	 * @throws CollectionEmptyEx 
+	 * @throws CollectionEmptyEx Custom exception
 	 */
 	public static void main(String[] args) throws CollectionEmptyEx {
 		

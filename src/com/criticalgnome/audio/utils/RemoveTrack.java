@@ -16,7 +16,7 @@ public class RemoveTrack {
 	 * Remove the track from collection.
 	 * @param myCollection Current Collection
 	 * @return edited Collection
-	 * @throws CollectionEmptyEx 
+	 * @throws CollectionEmptyEx custom exception
 	 */
 	public static Collection removeTrack(Collection myCollection) throws CollectionEmptyEx {
 		int number = -1;

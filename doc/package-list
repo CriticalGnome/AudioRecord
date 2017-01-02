@@ -1,4 +1,5 @@
 com.criticalgnome.audio
 com.criticalgnome.audio.beans
+com.criticalgnome.audio.exceptions
 com.criticalgnome.audio.interfaceses
 com.criticalgnome.audio.utils
