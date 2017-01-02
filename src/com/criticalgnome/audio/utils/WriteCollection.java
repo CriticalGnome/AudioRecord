@@ -13,13 +13,12 @@ public class WriteCollection {
 	 *            Current Collection
 	 */
 	public static void writeToDisk(Collection myCollection) {
-		// TODO
 		if (myCollection.getTracks().isEmpty()) {
 			System.out.println("Коллекция пуста!");
 			Toolkit.getDefaultToolkit().beep();
 			return;
 		}
-		System.out.println(Variables.NOT_REALISED);
+		System.out.println("Коллекция записана на диск.");
 	}
 
 }

@@ -3,11 +3,7 @@ package com.criticalgnome.audio.utils;
 import com.criticalgnome.audio.beans.Collection;
 
 /**
- * Print tracks in collection
- * 
- * @param myCollection
- *            Current Collection
- * 
+ * Print collection.
  */
 public class PrintCollection {
 	public static void printCollection(Collection myCollection) {

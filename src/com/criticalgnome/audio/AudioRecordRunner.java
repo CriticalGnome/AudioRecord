@@ -8,7 +8,7 @@ package com.criticalgnome.audio;
 // TODO Реализовать в итоговом проекте модуля custom exceptions и их корректную обработку
 // TODO Реализовать +List+, Set, Map в итоговом проекте
 // TODO Реализовать сериализацию в итоговом проекте (иерархия, static, transient)
-// TODO Использовать ListIterator в итоговом проекте
+// TODO Реализовать ListIterator в итоговом проекте
 // TODO Реализовать перечисления в итоговом проекте
 // TODO Реализовать параметризацию (generics) в итоговом проекте 
 
@@ -34,7 +34,6 @@ public class AudioRecordRunner {
 	 *
 	 * @param args
 	 *            Command line arguments
-	 * @throws CollectionEmptyEx
 	 */
 	public static void main(String[] args) {
 		
@@ -56,7 +55,7 @@ public class AudioRecordRunner {
 			ois.close();
 			System.out.println("\nПредыдущая сессия успешно импротирована.");
 		} catch (FileNotFoundException e) {
-			System.out.println("\nПредыдущая сессия не найдена. Используем пустую коллекцию.");
+			System.out.println("\nПредыдущая сессия не найдена. Будем использовать пустую коллекцию.");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
