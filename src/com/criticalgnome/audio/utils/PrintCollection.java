@@ -1,3 +1,8 @@
+/*
+ * Project AudioRecord
+ * @author Sergey Kalinovsky
+ * @version 1.0
+ */
 package com.criticalgnome.audio.utils;
 
 import com.criticalgnome.audio.beans.Collection;
