@@ -89,7 +89,7 @@ public class AudioRecordRunner {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				System.out.println("Работа завершена...");
+				System.out.println("Работа завершена.");
 				System.exit(0);
 			default:
 				System.out.println(Variables.INVALID_INPUT);
