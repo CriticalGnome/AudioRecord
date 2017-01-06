@@ -6,7 +6,7 @@
 package com.criticalgnome.audio.utils;
 
 import com.criticalgnome.audio.beans.Collection;
-import com.criticalgnome.audio.exceptions.CollectionEmptyEx;
+import com.criticalgnome.audio.exceptions.CollectionEmptyException;
 
 public class WriteCollection {
 
@@ -19,8 +19,8 @@ public class WriteCollection {
 	public static void writeToDisk(Collection myCollection) {
 		if (myCollection.getTracks().isEmpty()) {
 			try {
-				throw new CollectionEmptyEx();
-			} catch(CollectionEmptyEx e) {
+				throw new CollectionEmptyException();
+			} catch(CollectionEmptyException e) {
 				
 			}
 			return;

@@ -5,16 +5,17 @@
  */
 package com.criticalgnome.audio.beans;
 
+import com.criticalgnome.audio.interfaceses.Readable;
 import com.criticalgnome.audio.interfaceses.Writable;
 
 /**
  * The Class Disk.
  */
 public abstract class Disk implements Readable, Writable {
-	void Read() {
+	public void read() {
 	
 	}
-	void Write() {
+	public void write() {
 		
 	}
 }

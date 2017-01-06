@@ -18,10 +18,10 @@ public class Track extends File implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 3193721823729996955L;
-	private String name; // Track name
-	private int duration; // Duration (in seconds)
-	private Style style; // Style
-	private String author; // Author
+	private String name;
+	private int duration;
+	private Style style;
+	private String author;
 	
 	/**
 	 * New track constructor

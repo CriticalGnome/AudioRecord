@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.criticalgnome.audio.beans.*;
-import com.criticalgnome.audio.exceptions.CollectionEmptyEx;
+import com.criticalgnome.audio.exceptions.CollectionEmptyException;
 import com.criticalgnome.audio.utils.*;
 
 public class AudioRecordRunner {
@@ -20,9 +20,9 @@ public class AudioRecordRunner {
 	 *
 	 * @param args
 	 *            Command line arguments
-	 * @throws CollectionEmptyEx Custom exception
+	 * @throws CollectionEmptyException Custom exception
 	 */
-	public static void main(String[] args) throws CollectionEmptyEx {
+	public static void main(String[] args) throws CollectionEmptyException {
 		
 		List<Track> tracks = new ArrayList<Track>();
 		
@@ -32,30 +32,30 @@ public class AudioRecordRunner {
 		CalendarOperations.printCurrentDateAndTime();
 
 		while (true) {
-			MainMenu.mainMenu();
+			MainMenu.printMainMenu();
 			switch (Keyboard.inputNumber()) {
 
-			case Variables.ADD_TRACK:
+			case Constants.ADD_TRACK:
 				myCollection = AddTrack.addTrack(myCollection);
 				break;
-			case Variables.REMOVE_TRACK:
+			case Constants.REMOVE_TRACK:
 				myCollection = RemoveTrack.removeTrack(myCollection);
 				break;
-			case Variables.SORT_COLLECTION:
+			case Constants.SORT_COLLECTION:
 				myCollection = SortCollection.sortByStyle(myCollection);
 				break;
-			case Variables.TAKE_BY_DURATION:
+			case Constants.TAKE_BY_DURATION:
 				SelectTracks.selectByDuration(myCollection);
 				break;
-			case Variables.RECORD_DISK:
+			case Constants.RECORD_DISK:
 				WriteCollection.writeToDisk(myCollection);
 				break;
-			case Variables.EXIT:
+			case Constants.EXIT:
 				FileOperations.saveSession(myCollection);
 				System.out.println("Работа завершена...");
 				System.exit(0);
 			default:
-				System.out.println(Variables.INVALID_INPUT);
+				System.out.println(Constants.INVALID_INPUT);
 				Toolkit.getDefaultToolkit().beep();
 			}
 		}

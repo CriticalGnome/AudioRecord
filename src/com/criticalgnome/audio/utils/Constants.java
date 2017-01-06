@@ -8,7 +8,7 @@ package com.criticalgnome.audio.utils;
 /**
  * The Class contains some important variables.
  */
-public class Variables {
+public class Constants {
 
 	/** Thick line decoration string */
 	public static final String THICK_LINE = "\n==================================================================";
@@ -26,5 +26,6 @@ public class Variables {
 	public static final int SORT_COLLECTION = 3; // Key 3 from keyboard
 	public static final int TAKE_BY_DURATION = 4; // Key 4 from keyboard
 	public static final int RECORD_DISK = 5; // Key 5 from keyboard
+	public static final int TWO_DIGIT_NUMBER = 9;
 	
 }

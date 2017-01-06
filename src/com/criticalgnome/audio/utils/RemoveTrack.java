@@ -8,7 +8,7 @@ package com.criticalgnome.audio.utils;
 import java.awt.Toolkit;
 
 import com.criticalgnome.audio.beans.Collection;
-import com.criticalgnome.audio.exceptions.CollectionEmptyEx;
+import com.criticalgnome.audio.exceptions.CollectionEmptyException;
 
 public class RemoveTrack {
 
@@ -16,30 +16,30 @@ public class RemoveTrack {
 	 * Remove the track from collection.
 	 * @param myCollection Current Collection
 	 * @return edited Collection
-	 * @throws CollectionEmptyEx custom exception
+	 * @throws CollectionEmptyException custom exception
 	 */
-	public static Collection removeTrack(Collection myCollection) throws CollectionEmptyEx {
+	public static Collection removeTrack(Collection myCollection) throws CollectionEmptyException {
 		int number = -1;
-		while (number != Variables.EXIT) {
+		while (number != Constants.EXIT) {
 			if (myCollection.getTracks().isEmpty()) {
 				try {
-					throw new CollectionEmptyEx();
-				} catch(CollectionEmptyEx e) {
+					throw new CollectionEmptyException();
+				} catch(CollectionEmptyException e) {
 					
 				}
 				break;
 			}
-			System.out.println(Variables.THICK_LINE);
+			System.out.println(Constants.THICK_LINE);
 			System.out.println("Музыкальная коллекция \"" + myCollection.getName() + "\".");
-			System.out.println(Variables.THIN_LINE);
+			System.out.println(Constants.THIN_LINE);
 			PrintCollection.printCollection(myCollection);
 			System.out.print("Какой трек удалить? (0 - отмена): ");
 			number = Keyboard.inputNumber();
-			if (number == Variables.EXIT) {
+			if (number == Constants.EXIT) {
 				break;
 			}
 			if (number < 1 || number - 1 >= myCollection.getTracks().size()) {
-				System.out.println(Variables.INVALID_INPUT);
+				System.out.println(Constants.INVALID_INPUT);
 				Toolkit.getDefaultToolkit().beep();
 				continue;
 			}

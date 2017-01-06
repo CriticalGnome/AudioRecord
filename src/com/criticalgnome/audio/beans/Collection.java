@@ -18,8 +18,8 @@ public class Collection implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -660440111642085937L;
-	private String name; // Collection name
-	private int duration; // Duration (in seconds)
+	private String name;
+	private int duration;
 	private List<Track> tracks = new ArrayList<Track>();
 
 	/**

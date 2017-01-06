@@ -7,7 +7,7 @@ package com.criticalgnome.audio.utils;
 
 import com.criticalgnome.audio.beans.Collection;
 import com.criticalgnome.audio.beans.Track;
-import com.criticalgnome.audio.exceptions.CollectionEmptyEx;
+import com.criticalgnome.audio.exceptions.CollectionEmptyException;
 
 public class SortCollection {
 
@@ -19,8 +19,8 @@ public class SortCollection {
 	public static Collection sortByStyle(Collection myCollection) {
 		if (myCollection.getTracks().isEmpty()) {
 			try {
-				throw new CollectionEmptyEx();
-			} catch(CollectionEmptyEx e) {
+				throw new CollectionEmptyException();
+			} catch(CollectionEmptyException e) {
 				
 			}
 			return myCollection;
@@ -35,9 +35,9 @@ public class SortCollection {
 				}
 			}
 		}
-		System.out.println(Variables.THICK_LINE);
+		System.out.println(Constants.THICK_LINE);
 		System.out.println("Коллекция \"" + myCollection.getName() + "\" отсортирована по музыкальному стилю.");
-		System.out.println(Variables.THIN_LINE);
+		System.out.println(Constants.THIN_LINE);
 		PrintCollection.printCollection(myCollection);
 		return myCollection;
 	}

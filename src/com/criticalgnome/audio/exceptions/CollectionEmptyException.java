@@ -2,10 +2,10 @@ package com.criticalgnome.audio.exceptions;
 
 import java.awt.Toolkit;
 
-public class CollectionEmptyEx extends Exception {
+public class CollectionEmptyException extends Exception {
 
 	private static final long serialVersionUID = 1L;
-	public CollectionEmptyEx() {
+	public CollectionEmptyException() {
 		System.out.println("Коллекция пуста!");
 		Toolkit.getDefaultToolkit().beep();
 		return;
